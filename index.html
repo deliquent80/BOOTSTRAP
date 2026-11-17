@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Portal</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+    <div class="container">
+      <a class="navbar-brand" href="#dashboard">Student Portal</a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#dashboard">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#dashboard">Subjects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#register">Register</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container py-4">
+    <h1 class="text-center mb-4" id="dashboard">Dashboard</h1>
+
+    <div class="row g-3">
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Profile</h5>
+            <p class="card-text" id="profileText">No profile yet. Register first.</p>
+            <a href="#" class="btn btn-primary card-btn" data-type="profile">Open</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Announcements</h5>
+            <p class="card-text" id="announceText">Register to see your announcements.</p>
+            <a href="#" class="btn btn-primary card-btn" data-type="announcements">Read</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Subjects</h5>
+            <p class="card-text" id="subjectsText">Register to see your subjects.</p>
+            <a href="#" class="btn btn-primary card-btn" data-type="subjects">View</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="mt-5 mb-3" id="register">Register</h2>
+
+    <div id="message"></div>
+
+    <form class="row g-3" id="registerForm" novalidate>
+      <div class="col-12 col-md-6">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name">
+        <div class="invalid-feedback">Please enter your name.</div>
+      </div>
+      <div class="col-12 col-md-6">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email">
+        <div class="invalid-feedback">Please enter a valid email.</div>
+      </div>
+      <div class="col-12 col-md-6">
+        <label for="program" class="form-label">Program</label>
+        <select class="form-select" id="program">
+          <option value="BSIS">BSIS</option>
+          <option value="BSIT">BSIT</option>
+          <option value="BSCS">BSCS</option>
+        </select>
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+
+    <div class="table-responsive mt-4 d-none" id="tableBox">
+      <table class="table table-striped align-middle">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Program</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="studentList"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="modal fade" id="infoModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitle"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body" id="modalText" style="white-space: pre-line;"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
